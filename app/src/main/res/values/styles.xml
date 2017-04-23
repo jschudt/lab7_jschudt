@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/colorTextDark</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_size_splash</item>
+    </style>
+
+    <style name="MyToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/colorTextDark</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="MyPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/colorTextDark</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/font_size_splash</item>
+    </style>
+
+</resources>

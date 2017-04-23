@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:srcCompat="@mipmap/notredame"
+        android:id="@+id/HomeTeamLogo"
+        android:contentDescription="@string/home_team_logo" />
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:srcCompat="@mipmap/bballicon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/AwayTeamLogo"
+        android:contentDescription="@string/away_team_logo" />
+
+    <TextView
+        android:text="@string/score"
+        android:id="@+id/Score"
+        android:layout_height="96dp"
+        android:textAlignment="center"
+        android:paddingTop="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/colorTextDark"
+        android:layout_toEndOf="@+id/HomeTeamLogo"
+        android:layout_width="190dp" />
+
+    <TextView
+        android:text="@string/homename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HomeTeamLogo"
+        android:layout_alignParentStart="true"
+        android:id="@+id/HomeTeamName"
+        android:textColor="@color/colorTextDark"
+        android:textSize="24sp"
+        android:textAlignment="textStart"
+        android:layout_marginLeft="16dp"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:text="@string/homemascot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HomeTeamMascot"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HomeTeamName"
+        android:layout_alignBottom="@+id/AwayTeamMascot"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="18sp"
+        android:textAlignment="textStart"
+        tools:ignore="RtlHardcoded"
+        android:textColor="@color/colorTextDark" />
+
+    <TextView
+        android:text="@string/awaymascot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AwayTeamName"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/AwayTeamMascot"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:textSize="18sp"
+        android:textAlignment="textEnd"
+        tools:ignore="RtlHardcoded"
+        android:textColor="@color/colorTextDark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AwayTeamName"
+        android:textSize="24sp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorTextDark"
+        android:layout_below="@+id/AwayTeamLogo"
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText,RtlHardcoded"
+        android:text="@string/awayname"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:text="@string/gamedate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AwayTeamMascot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:id="@+id/GameDate"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@color/colorTextDark" />
+
+    <Button
+        android:text="@string/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GameDate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:id="@+id/CameraButton" />
+
+
+</RelativeLayout>

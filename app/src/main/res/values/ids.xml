@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sync" type="id">sync</item>
+    <item name="share" type="id">share</item>
+    <item name="settings" type="id">settings</item>
+</resources>

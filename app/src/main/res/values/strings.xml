@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ND BasketBall</string>
+    <string name="splashtext">Notre Dame Basketball</string>
+    <string name="home_team_logo">Home Team Logo</string>
+    <string name="away_team_logo">Away Team Logo</string>
+    <string name="score">score</string>
+    <string name="homename">homename</string>
+    <string name="homemascot">homemascot</string>
+    <string name="awaymascot">awaymascot</string>
+    <string name="awayname">awayname</string>
+    <string name="gamedate">gamedate</string>
+    <string name="camera">Camera</string>
+</resources>
