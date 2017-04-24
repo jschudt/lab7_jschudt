@@ -21,11 +21,11 @@ public class DetailActivity extends Activity {
     public void onCreate (Bundle bundle) {
         super.onCreate(bundle);
         setContentView(activity_detail);
+        DataBaseHelper db = new DataBaseHelper(getApplicationContext());
 
-        Team awayteam = (Team) getIntent().getSerializableExtra("team");
-        String[] ndstring = { "Notre Dame", "notredame", "(21-5)", "Fighting Irish", "0", "Error"};
-        Team notreDame = new Team(ndstring);
-        Team hometeam = notreDame;
+        int teamID = (int) getIntent().getSerializableExtra("team");
+        Team awayteam = db.getATeam(teamID);
+        Team hometeam = new Team("Notre Dame", "notredame", "(21-5)", "Fighting Irish", "0", "Error", 99);
 
         ImageView HomeTeamLogo = (ImageView) findViewById(R.id.HomeTeamLogo);
         String mDrawableName = hometeam.getTeamLogo();

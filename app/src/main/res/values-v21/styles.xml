@@ -23,7 +23,7 @@
 
     <style name="MyPopupTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">@color/colorTextDark</item>
-        <item name="android:background">@color/colorPrimaryAlt</item>
+        <item name="android:background">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/font_size_splash</item>
     </style>
 </resources>

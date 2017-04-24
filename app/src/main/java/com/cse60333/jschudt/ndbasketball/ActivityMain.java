@@ -1,6 +1,8 @@
 package com.cse60333.jschudt.ndbasketball;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import static com.cse60333.jschudt.ndbasketball.DataBaseHelper.TABLE_TEAM;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -30,28 +34,22 @@ public class ActivityMain extends AppCompatActivity {
         MyCsvFileReader file = new MyCsvFileReader(getApplicationContext());
         ArrayList<String[]> rawteamlist = file.readCsvFile(R.raw.schedule);
 
-        Team floridaState = new Team(rawteamlist.get(0));
-        Team bostonCollege = new Team(rawteamlist.get(1));
-        Team northCarolinaState = new Team(rawteamlist.get(2));
-        Team georgiaTech = new Team(rawteamlist.get(3));
-        Team bostonCollege2 = new Team(rawteamlist.get(4));
-        Team louisVille = new Team(rawteamlist.get(5));
-        Team accTournament = new Team(rawteamlist.get(6));
-        Team ncaaTournament = new Team(rawteamlist.get(7));
 
-        teams.add(floridaState);
-        teams.add(bostonCollege);
-        teams.add(northCarolinaState);
-        teams.add(georgiaTech);
-        teams.add(bostonCollege2);
-        teams.add(louisVille);
-        teams.add(accTournament);
-        teams.add(ncaaTournament);
+
+        final DataBaseHelper dbHelper = new DataBaseHelper(this.getApplicationContext());
+
+
+        for (int i = 0; i < rawteamlist.size(); i++) {
+            String[] iteam = rawteamlist.get(i);
+            dbHelper.insertData(new Team(iteam[0], iteam[1], iteam[2], iteam[3], iteam[4],
+                    iteam[5], i));
+        }
+
 
 
         ListView ScheduleListView = (ListView) findViewById(R.id.ScheduleListView);
 
-        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getApplicationContext(), teams);
+        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getApplicationContext(), dbHelper.getAllTeams());
 
         ScheduleListView.setAdapter(scheduleAdapter);
 
@@ -62,7 +60,7 @@ public class ActivityMain extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(ActivityMain.this, DetailActivity.class);
-                intent.putExtra("team", teams.get(position));
+                intent.putExtra("team", position);
                 startActivity(intent);
             }
         };

@@ -13,20 +13,23 @@ public class Team implements Serializable {
     String teamMascot;
     String teamScore;
     String gameDate;
+    int teamID;
 
-    public Team(String[] team) {
-        String team_name = team[0];
-        String team_logo = team[1];
-        String team_record = team[2];
-        String team_mascot = team[3];
-        String team_score = team[4];
-        String game_date = team[5];
+    public Team(
+            String team_name ,
+            String team_logo ,
+            String team_record ,
+            String team_mascot ,
+            String team_score ,
+            String game_date ,
+            int team_id){
         setTeamName(team_name);
         setTeamLogo(team_logo);
         setTeamRecord(team_record);
         setTeamMascot(team_mascot);
         setTeamScore(team_score);
         setGameDate(game_date);
+        setTeamID(team_id);
     }
 
     public void setTeamName(String team_name) {
@@ -75,5 +78,11 @@ public class Team implements Serializable {
 
     public String getGameDate() {
         return this.gameDate;
+    }
+    //********************************************************************************
+    public void setTeamID(int team_id) {this.teamID = team_id; }
+
+    public int getTeamID() {
+        return this.teamID;
     }
 }
